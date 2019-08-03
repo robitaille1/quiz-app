@@ -1,0 +1,64 @@
+body {
+    font-family: 'PT Serif', serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin-left: 20px;
+    align-self: center;
+}
+
+form {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.start {
+    background-color: cyan;
+    padding: 5px;
+}
+
+.answer {
+    margin: 10px;
+    padding: 5px;
+    background-color: gold;
+}
+
+.submit {
+    margin: 10px;
+    padding: 5px;
+    background-color: greenyellow;
+}
+
+.right-header {
+    margin-right: 20px;
+    justify-self: flex-end;
+    align-self: center;
+}
+
+.right {
+    margin: 10px;
+    color: rgb(46, 215, 221);
+    font-size: 25px;
+}
+
+.container {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 25px;
+    border: 1px solid black;
+    width: 80%;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    border-radius: 20px;
+}
+
