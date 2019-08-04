@@ -62,3 +62,11 @@ form {
     border-radius: 20px;
 }
 
+.correct {
+    color: green;
+    font-size: 23px;
+}
+
+.incorrect {
+    color: red;
+}
