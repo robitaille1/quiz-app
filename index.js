@@ -20,12 +20,14 @@ function renderQuestions() {
         $('.display').html(`
             <section role='Quiz Questions' class="container question">
                 <h2>${STORE[questionNum].question}</h2>
-                <form>
-                    <button class="answer">${STORE[questionNum].option1}</button>
-                    <button class="answer">${STORE[questionNum].option2}</button>
-                    <button class="answer">${STORE[questionNum].option3}</button>
-                    <button class="answer">${STORE[questionNum].option4}</button>
-                    <button type='button' class='submit'>SUBMIT</button>
+                <form class='mainForm'>
+                    <fieldset>
+                        <input name='answer' type='radio'class="answer" value='option1'>${STORE[questionNum].option1}</input>
+                        <input name='answer' type='radio'class="answer" value='option2'>${STORE[questionNum].option2}</input>
+                        <input name='answer' type='radio'class="answer" value='option3'>${STORE[questionNum].option3}</input>
+                        <input name='answer' type='radio' class="answer" value='option4'>${STORE[questionNum].option4}</input>
+                        <button type='button' class='submit'>SUBMIT</button>
+                    </fieldset>
                 </form>
             </section>`
         );
@@ -34,15 +36,24 @@ function renderQuestions() {
     }
 }
 
+
+
 function submitAnswer() {
     //When answer selected and button submitted
     $('body').on('click', '.submit', function(){
         event.preventDefault();
+        var submittedAnswer = $("input[type= 'radio']:checked").val();
         console.log('Submit button clicked');
         $('.question').remove();
-        correctAnswerPage();
+        if(STORE[questionNum-1][submittedAnswer] === STORE[questionNum-1].correctAnswer){
+            correctAnswerPage();
+        } else {
+            incorrectAnswerPage();
+        }
     });
 }
+
+
 
 function correctAnswerPage() {
     //if selected answer is correct
@@ -60,9 +71,9 @@ function correctAnswerPage() {
 function incorrectAnswerPage(){
     //if selected answer is incorrect
     $('.display').append(`
-        <section role='Incorrect Answer' class="container">
+        <section role='Incorrect Answer' class="container js-incorrect-answer">
             <h2 class="incorrect">Incorrect Answer</h2>
-            <p>The correct answer is: <span class="incorrect">${STORE[questionNum].correctAnswer}</span></p>
+            <p>The correct answer is: <span class="incorrect">${STORE[questionNum-1].correctAnswer}</span></p>
             <form>
                 <button class='incorrect-btn'>Next Question</button>
             </form>
@@ -78,7 +89,14 @@ function nextQuestion(){
         $('.js-correct-answer').remove();
         $(renderQuestions);
     });
+    $('body').on('click', '.incorrect-btn', function(){
+        console.log('next question clicked');
+        event.preventDefault();
+        $('.js-incorrect-answer').remove();
+        $(renderQuestions);
+    });
 }
+
 
 function numberCounter() {
     //increment by 1 at each question
