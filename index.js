@@ -19,7 +19,6 @@ function renderQuestions() {
         $(numberCounter);
         $('.display').html(`
             <section role='Quiz Questions' class="container question">
-                
                 <form class='mainForm'>
                     <fieldset class='answerForm'>
                     <legend>
@@ -47,8 +46,6 @@ function renderQuestions() {
     }
 }
 
-
-
 function submitAnswer() {
     //When answer selected and button submitted
     $('body').on('click', '.submit', function(){
@@ -63,8 +60,6 @@ function submitAnswer() {
         }
     });
 }
-
-
 
 function correctAnswerPage() {
     //if selected answer is correct
@@ -99,8 +94,6 @@ function incorrectAnswerPage(){
         $('.incorrect-btn').text('See Results!')
     }
 }
-
-
 
 
 //Answer page button - move to next Question
@@ -149,19 +142,19 @@ function overallPage() {
     $('.amtCorrect').text(score);
     if(score < 3){
         $('.message-header').text('You need to try harder next time 👎👎')
-        $('.message').text("Not that there's anything wrong with that!")
+        $('.message').text(" 'No soup for you!!' - The Soup Nazi")
     } else if (score > 3 && score <= 5){
         $('.message-header').text('Better luck next time ❌❌')
-        $('.message').text("Serenity Now!")
+        $('.message').text(" 'Serenity Now!' - Frank Costanza")
     } else if (score > 5 && score <= 7){
         $('.message-header').text('Keep trying! 🤔')
-        $('.message').text("You're sooo good looking")
+        $('.message').text("'You\'re sooo good looking' - Elaine")
     } else if (score > 7 && score < 10){
         $('.message-header').text("You're almost there! 👍👍👍")
-        $('.message').text("These pretzels are making me thirsty!")
+        $('.message').text("'These pretzels are making me thirsty!' - Kramer")
     } else if (score === 10) {
         $('.message-header').text("You're amazing!! 🔥🔥🔥")
-        $('.message').text("You're master of your domain!")
+        $('.message').text("'You\'re master of your domain!' - Jerry")
     }
     //When button clicked render main screen again
 }

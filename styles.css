@@ -94,12 +94,14 @@ p {
     padding-top: 15px;
     padding-bottom: 15px;
     background-color: greenyellow;
+    font-size: 20px;
 }
 
 .correct-btn {
     margin: 10px;
     padding: 20px;
     background-color: greenyellow;
+    font-size: 18px;
 }
 
 .incorrect-btn {
@@ -108,7 +110,7 @@ p {
     padding: 20px;
     background-color:red;
     color: white;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 .restart {
@@ -189,8 +191,16 @@ p {
 
 
 @media (max-width: 750px){
+    body {
+        width: 100%;
+    }
+    .right-header {
+        margin-right: 20px;
+    }
     .container {
         padding: 10px;
+        margin-left: auto;
+        margin-right: auto;
     }
     .answerForm {
         display: flex;
@@ -218,9 +228,25 @@ p {
         margin-top: 50px;;
         font-size: 25px;
     }
+    .correct-img {
+        height: 150px;
+        width: 250px;
+    }
+    .correct {
+        font-size: 20px;
+    }
+    .incorrect {
+        font-size: 20px;
+    }
+    .header-img {
+        height: 75px;
+        width: 135px;
+        margin-right: 10px;
+        margin-left: -10px;
+    }
 }
 
-@media (max-width: 1000px){
+@media (min-width: 1000px){
     .answerForm {
         display: flex;
         flex-direction: column;
@@ -233,5 +259,11 @@ p {
         width: 100%;
         padding-top: 10px;
         padding-bottom: 10px;
+    }
+    .correct {
+        font-size: 30px;
+    }
+    .incorrect {
+        font-size: 30px;
     }
 }
