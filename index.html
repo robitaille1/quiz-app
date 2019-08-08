@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700&display=swap" rel="stylesheet">
     <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -16,18 +16,20 @@
 </head>
 <body>
     <header>
-        <h1>Seinfeld Quiz</h1>
-        <div class='right-header'role='score'>
+        <a class='heading'href="file:///C:/Users/lucro/projects/quiz-app/index.html">
+            <h1><img class="header-img" src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Seinfeld_English_logo.png" alt="Seinfeld Logo"></h1>
+        </a>
+        <section class='right-header'role='score'>
             <p class="right">Question <span class="currentQ">0</span>/10</p>
             <p class='right'>Score: <span class='currentScore'>0</span></p>
-        </div>
+        </section>
     </header>
-    <Section class='container js-hide-it' role='main'>
-        <h2>Press the button below to test your knowledge</h2>
+    <Section class='container js-hide-it main-contain' role='main'>
+        <h2 class='main-title'>Press the button below to test your knowledge</h2>
         <form>
             <button class="start">START QUIZ</button>        
         </form>
     </Section>
-    <div class='display'></div>
+    <div class='display' role='quiz content'></div>
 </body>
 </html>

@@ -19,13 +19,24 @@ function renderQuestions() {
         $(numberCounter);
         $('.display').html(`
             <section role='Quiz Questions' class="container question">
-                <h2>${STORE[questionNum].question}</h2>
+                
                 <form class='mainForm'>
-                    <fieldset>
-                        <input name='answer' type='radio'class="answer" value='option1'>${STORE[questionNum].option1}</input>
-                        <input name='answer' type='radio'class="answer" value='option2'>${STORE[questionNum].option2}</input>
-                        <input name='answer' type='radio'class="answer" value='option3'>${STORE[questionNum].option3}</input>
-                        <input name='answer' type='radio' class="answer" value='option4'>${STORE[questionNum].option4}</input>
+                    <fieldset class='answerForm'>
+                    <legend>
+                        <h2 class='question-text'>${STORE[questionNum].question}</h2>
+                    </legend>
+                        <label class='answer-label' for='answer1'>
+                            <input name='answer' type='radio'class="answer" value='option1' id='answer1'>${STORE[questionNum].option1}</input>
+                        </label>
+                        <label class='answer-label' for='answer2'>
+                            <input name='answer' type='radio'class="answer" value='option2' id='answer2'>${STORE[questionNum].option2}</input>
+                        </label>
+                        <label class='answer-label' for='answer3'>
+                            <input name='answer' type='radio'class="answer" value='option3' id='answer3'>${STORE[questionNum].option3}</input>
+                        </label>
+                        <label class='answer-label' for='answer4'>
+                            <input name='answer' type='radio' class="answer" value='option4' id='answer4'>${STORE[questionNum].option4}</input>
+                        </label>
                         <button type='button' class='submit'>SUBMIT</button>
                     </fieldset>
                 </form>
@@ -59,27 +70,38 @@ function correctAnswerPage() {
     //if selected answer is correct
     $('.display').append(`
     <section role='Correct Answer' class="container js-correct-answer">
-        <h2 class="Correct">Correct Answer!!</h2>
+        <h2 class="correct">Correct Answer!!😍</h2>
+        <img class="correct-img" src='${STORE[questionNum-1].questionImg}' alt='${STORE[questionNum-1].questionAlt}'>
         <form>
             <button type='button' class='correct-btn'>Next Question</button>
         </form>
     </section>`
-    );
+    );   
     correctAnswers();
+    if(questionNum === 10) {
+        $('.correct-btn').text('See Results!')
+    }
 }
 
 function incorrectAnswerPage(){
     //if selected answer is incorrect
     $('.display').append(`
         <section role='Incorrect Answer' class="container js-incorrect-answer">
-            <h2 class="incorrect">Incorrect Answer</h2>
+            <h2 class="incorrect">Incorrect Answer 😭😭</h2>
             <p>The correct answer is: <span class="incorrect">${STORE[questionNum-1].correctAnswer}</span></p>
+            <img class="correct-img" src='${STORE[questionNum-1].questionImg}' alt='${STORE[questionNum-1].questionAlt}'>
             <form>
                 <button class='incorrect-btn'>Next Question</button>
             </form>
         </section>`
     );
+    if(questionNum === 10) {
+        $('.incorrect-btn').text('See Results!')
+    }
 }
+
+
+
 
 //Answer page button - move to next Question
 function nextQuestion(){
@@ -116,15 +138,31 @@ function overallPage() {
     //After last question render the overall score page
     $('body').append(`
     <section role='Overall Results' class="container js-overall">
-        <h2>Congratulations!</h2>
+        <h2 class='message-header'>Congratulations!</h2>
         <p>You got <span class="amtCorrect">8</span> out of 10 correct!!</p>
+        <p class='message'></p>
         <form>
             <button class='restart'>Restart the Quiz</button>
         </form>
     </section>`
     );
     $('.amtCorrect').text(score);
-
+    if(score < 3){
+        $('.message-header').text('You need to try harder next time 👎👎')
+        $('.message').text("Not that there's anything wrong with that!")
+    } else if (score > 3 && score <= 5){
+        $('.message-header').text('Better luck next time ❌❌')
+        $('.message').text("Serenity Now!")
+    } else if (score > 5 && score <= 7){
+        $('.message-header').text('Keep trying! 🤔')
+        $('.message').text("You're sooo good looking")
+    } else if (score > 7 && score < 10){
+        $('.message-header').text("You're almost there! 👍👍👍")
+        $('.message').text("These pretzels are making me thirsty!")
+    } else if (score === 10) {
+        $('.message-header').text("You're amazing!! 🔥🔥🔥")
+        $('.message').text("You're master of your domain!")
+    }
     //When button clicked render main screen again
 }
 

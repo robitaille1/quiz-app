@@ -1,5 +1,6 @@
 body {
-    font-family: 'PT Serif', serif;
+    font-family: 'Source Serif Pro', serif;
+    background-image: url(https://www.cheatsheet.com/wp-content/uploads/2018/02/1510px-757_New_Hampshire_Ave_2.jpg);
 }
 
 header {
@@ -7,59 +8,128 @@ header {
     justify-content: space-between;
     margin-left: 20px;
     margin-right: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    font-weight: 700;
 }
 
 h1 {
     margin-left: 20px;
     align-self: center;
+    margin-bottom: 0px;
 }
 
 form {
-    padding: 10px;
+    padding: 0px;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
+fieldset {
+    border: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-top: 5px;
+}
+
+.header-img {
+    height: 100px;
+    width: 200px;
+}
+
+.correct-img {
+    height: 225px;
+    width: 350px;
+}
+
+.heading {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.heading:hover  {
+    color:  black;
+    text-shadow: 2px 2px 5px rgb(221, 204, 46);
+}
+
 .start {
     background-color: cyan;
-    padding: 5px;
+    padding: 15px;
+    font-size: 25px;
 }
 
 .answer {
     margin: 10px;
     padding: 5px;
     background-color: gold;
+    flex-direction: column; ;
+    margin-bottom: 10px;
+    align-self: flex-start;
+}
+
+.answerForm {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.answer-label {
+    border: 1px solid black;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(187, 180, 180, 0.884);
+    font-size: 20px;
 }
 
 .submit {
-    margin: 10px;
-    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
     background-color: greenyellow;
 }
 
 .correct-btn {
     margin: 10px;
-    padding: 5px;
+    padding: 20px;
     background-color: greenyellow;
 }
 
-.restart {
+.incorrect-btn {
     margin: 10px;
-    padding: 5px;
-    background-color: greenyellow;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color:red;
+    color: white;
+    font-size: 15px;
+}
+
+.restart {
+    background-color: cyan;
+    padding: 15px;
+    font-size: 25px;
+    margin-bottom: 20px;
 }
 
 .right-header {
     margin-right: 20px;
     justify-self: flex-end;
     align-self: center;
+    border: 1px solid black;
+    background-color:  rgba(255, 250, 250, 0.877);
+    border-radius: 20px;
 }
 
 .right {
     margin: 10px;
-    color: rgb(46, 215, 221);
+    color:rgb(0, 206, 206);
     font-size: 25px;
 }
 
@@ -69,9 +139,26 @@ form {
     margin-bottom: 25px;
     border: 1px solid black;
     width: 80%;
-    padding-bottom: 50px;
-    padding-top: 50px;
+    padding-bottom: 0px;
+    padding-top: 5px;
     border-radius: 20px;
+    background-color: rgba(255, 250, 250, 0.877)
+}
+
+.main-contain {
+    height: 250px;
+}
+
+.main-title {
+    margin-top: 50px;;
+    font-size: 35px;
+}
+
+.correct {
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-size: 35px;
+    color: black;
 }
 
 .amtCorrect {
@@ -81,8 +168,70 @@ form {
 
 .incorrect {
     color: red;
+    font-size: 25px;
 }
 
 .hidden {
     display: none;
+}
+
+.answer-label {
+    border: 1px solid black;
+    /* margin-right: 10px; */
+    align-self: center;
+    padding: 10px;
+}
+
+.question-text {
+    margin-top: 10px;
+}
+
+
+
+@media (max-width: 750px){
+    .container {
+        padding: 10px;
+    }
+    .answerForm {
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+    }
+    .answer {
+        flex-direction: column; 
+        margin-bottom: 10px;
+        align-self: flex-start;
+    }
+    .answer-label {
+        border: 1px solid black;
+        margin-bottom: 10px;
+        padding: 10px;
+        justify-content: space-between;
+        font-size: 18px;
+    }
+    .submit {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    .main-title {
+        margin-top: 50px;;
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 1000px){
+    .answerForm {
+        display: flex;
+        flex-direction: column;
+        width: 65%;
+    }
+
+    .submit {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 }
