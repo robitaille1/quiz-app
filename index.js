@@ -140,21 +140,21 @@ function overallPage() {
     </section>`
     );
     $('.amtCorrect').text(score);
-    if(score < 3){
+    if(score <= 3){
         $('.message-header').text('You need to try harder next time 👎👎')
-        $('.message').text(" 'No soup for you!!' - The Soup Nazi")
+        $('.message').text('"No soup for you!!" - The Soup Nazi')
     } else if (score > 3 && score <= 5){
         $('.message-header').text('Better luck next time ❌❌')
-        $('.message').text(" 'Serenity Now!' - Frank Costanza")
+        $('.message').text('"Serenity Now!" - Frank Costanza')
     } else if (score > 5 && score <= 7){
         $('.message-header').text('Keep trying! 🤔')
-        $('.message').text("'You\'re sooo good looking' - Elaine")
+        $('.message').text('"You\'re sooo good looking" - Elaine')
     } else if (score > 7 && score < 10){
         $('.message-header').text("You're almost there! 👍👍👍")
-        $('.message').text("'These pretzels are making me thirsty!' - Kramer")
+        $('.message').text('"These pretzels are making me thirsty!" - Kramer')
     } else if (score === 10) {
         $('.message-header').text("You're amazing!! 🔥🔥🔥")
-        $('.message').text("'You\'re master of your domain!' - Jerry")
+        $('.message').text('"You\'re master of your domain!" - Jerry')
     }
     //When button clicked render main screen again
 }
