@@ -14,7 +14,6 @@ function startQuiz() {
 
 //Questions Pages
 function renderQuestions() {
-    
     if(questionNum < STORE.length) {
         $(numberCounter);
         $('.display').html(`
@@ -25,7 +24,7 @@ function renderQuestions() {
                         <h2 class='question-text'>${STORE[questionNum].question}</h2>
                     </legend>
                         <label class='answer-label' for='answer1'>
-                            <input name='answer' type='radio'class="answer" value='option1' id='answer1'>${STORE[questionNum].option1}</input>
+                            <input checked name='answer' type='radio'class="answer" value='option1' id='answer1'>${STORE[questionNum].option1}</input>
                         </label>
                         <label class='answer-label' for='answer2'>
                             <input name='answer' type='radio'class="answer" value='option2' id='answer2'>${STORE[questionNum].option2}</input>

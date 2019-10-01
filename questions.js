@@ -2,9 +2,9 @@ const STORE = [
     {
         questionNum: 1,
         question: 'Which neighborhood in NYC does Jerry live?',
-        option1: 'Upper East Side',
+        option1: 'Upper West Side',
         option2: "Hell's Kitchen",
-        option3: 'Upper West Side',
+        option3: 'Upper East Side',
         option4: 'Midtown',
         correctAnswer: 'Upper East Side',
         questionImg: 'https://i0.wp.com/www.iamnotastalker.com/wp-content/uploads/2018/05/Screenshot-007907-1.jpg',

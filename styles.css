@@ -35,6 +35,10 @@ p {
     margin-top: 5px;
 }
 
+button {
+    cursor: pointer;
+}
+
 .header-img {
     height: 100px;
     width: 200px;
@@ -69,6 +73,7 @@ p {
     flex-direction: column; ;
     margin-bottom: 10px;
     align-self: flex-start;
+    cursor: pointer;
 }
 
 .answerForm {
@@ -85,6 +90,7 @@ p {
     justify-content: space-between;
     background-color: rgba(187, 180, 180, 0.884);
     font-size: 20px;
+    cursor: pointer;
 }
 
 .submit {
